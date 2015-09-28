@@ -5,12 +5,11 @@ language: java
 services:
   - docker
 
-#before_install:
-#- docker login -e not@val.id -u _json_key -p "$GCR_JSON_KEY" https://gcr.io
+before_install:
+- docker login -e not@val.id -u _json_key -p "$GCR_JSON_KEY" https://gcr.io
 
 script: |
-  echo $GCR_BAD_KEY
-  # docker build -t gcr.io/convoy-adapter/hello-world .
-  # docker push gcr.io/convoy-adapter/hello-world
+  docker build -t gcr.io/convoy-adapter/hello-world .
+  docker push gcr.io/convoy-adapter/hello-world
 
 
