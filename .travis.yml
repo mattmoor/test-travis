@@ -9,6 +9,7 @@ before_install:
 - docker login -e not@val.id -u _json_key -p "$GCR_JSON_KEY" https://gcr.io
 
 script: |
+  docker pull gcr.io/convoy-adapter/debian:wheezy
   docker build -t gcr.io/convoy-adapter/hello-world .
   docker push gcr.io/convoy-adapter/hello-world
 
